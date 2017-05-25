@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<!--
+
+In this file, comments are used to identify different parts of the code by letter.
+The Sporclone Instructions file will refer to letters when describing the sequence of
+steps necessary to create a working Sporclone game. Complete the project according
+to the order of the NUMBERED instructions, not the order of the letters.
+
+DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
+
+-->
+
+<html>
+<head>
+<!-- a. -->
+<title>Sporclone: The United States</title>
+
+<!-- b. -->
+<link rel="stylesheet" href="css/main.css">
+
+<!-- You may optionally style the table in your answers section here. -->
+<style>
+table {
+
+}
+
+tr {
+
+}
+
+th {
+
+}
+
+td {
+
+}
+
+table span {
+    /* applies only to span tags within table */
+    border: 1px solid #AAAAAA;
+    display: inline-block;
+    height: 20px;
+    width: 200px;
+}
+</style>
+
+<script>
+/*********** Game configuration ***********/
+
+// c.
+var answers = ["Alabama", "Alaska", "Arizona", "Arkansas", "California",
+              "Colorado", "Connecticut", "Delaware", "Florida", "Georgia",
+              "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+              "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+              "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
+              "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
+              "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+              "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+              "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
+              "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+
+// d.
+var time_limit = 300; // in seconds
+
+</script>
+
+</head>
+
+
+<!-- e. -->
+<body onload="setup()">
+
+<header>
+    <h1>Sporclone</h1>
+</header>
+
+<div class="frame">
+
+    <section>
+
+        <aside>
+            <h3>More Games</h3>
+            <ul>
+            <!-- f. -->
+            <li><a href="#">Puzzle Name</a></li>
+            <li><a href="#">Puzzle Name</a></li>
+            </ul>
+        </aside>
+
+        <!-- g. -->
+        <img class="icon" src="img/flag.jpg" alt="quiz logo">
+
+        <!-- h. -->
+        <h2>Name each state in the United States of America.</h2>
+
+    </section>
+
+    <section>
+
+        <div class="column">
+            <!-- i. -->
+            <input onclick="start()" id="start" type="button" value="PLAY GAME">
+        </div>
+
+        <div class="column">
+            <!-- j. -->
+            <h3>Enter state name:</h3>
+
+            <!-- k.  -->
+            <input onkeyup="check()" id="guess" type="text">
+        </div>
+
+        <div class="column">
+            <h3>Score</h3>
+            <span id="score"></span>
+        </div>
+
+        <div class="column">
+            <h3>Time</h3>
+            <span id="time"></span>
+        </div>
+
+    </section>
+
+    <section>
+
+        <!-- l. -->
+        <table>
+        <tr>
+        <td><span id="answer0"></span></td>
+        <td><span id="answer1"></span></td>
+        <td><span id="answer2"></span></td>
+        <td><span id="answer3"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer4"></span></td>
+        <td><span id="answer5"></span></td>
+        <td><span id="answer6"></span></td>
+        <td><span id="answer7"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer8"></span></td>
+        <td><span id="answer9"></span></td>
+        <td><span id="answer10"></span></td>
+        <td><span id="answer11"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer12"></span></td>
+        <td><span id="answer13"></span></td>
+        <td><span id="answer14"></span></td>
+        <td><span id="answer15"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer16"></span></td>
+        <td><span id="answer17"></span></td>
+        <td><span id="answer18"></span></td>
+        <td><span id="answer19"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer20"></span></td>
+        <td><span id="answer21"></span></td>
+        <td><span id="answer22"></span></td>
+        <td><span id="answer23"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer24"></span></td>
+        <td><span id="answer25"></span></td>
+        <td><span id="answer26"></span></td>
+        <td><span id="answer27"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer28"></span></td>
+        <td><span id="answer29"></span></td>
+        <td><span id="answer30"></span></td>
+        <td><span id="answer31"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer32"></span></td>
+        <td><span id="answer33"></span></td>
+        <td><span id="answer34"></span></td>
+        <td><span id="answer35"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer36"></span></td>
+        <td><span id="answer37"></span></td>
+        <td><span id="answer38"></span></td>
+        <td><span id="answer39"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer40"></span></td>
+        <td><span id="answer41"></span></td>
+        <td><span id="answer42"></span></td>
+        <td><span id="answer43"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer44"></span></td>
+        <td><span id="answer45"></span></td>
+        <td><span id="answer46"></span></td>
+        <td><span id="answer47"></span></td>
+        </tr>
+        <tr>
+        <td><span id="answer48"></span></td>
+        <td><span id="answer49"></span></td>
+        </tr>
+        </table>
+
+    </section>
+
+    <footer>
+
+        <!-- m. -->
+        <p>Quiz by Drew B</p>
+
+    </footer>
+
+</div>
+
+<!-- n. -->
+<script src="js/sporclone.js"></script>
+
+</body>
+</html>
